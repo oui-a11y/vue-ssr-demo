@@ -13,6 +13,10 @@ const devServer = {
     overlay: {
         errors: true,
     },
+  //映射路由，防止刷新后找不到对应映射文件
+    historyApiFallback:{
+      index:'/public/index.html'
+    },
     hot: true
 };
 
@@ -22,7 +26,9 @@ const defaultPluins = [
             NODE_ENV: isDev ? '"development"' : '"production"',
         }
     }),
-    new HTMLPlugin()
+    new HTMLPlugin({
+      template: path.join(__dirname, 'template.html')
+    })
 ]
 
 
