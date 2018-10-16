@@ -7,8 +7,8 @@ export default [
     redirect: '/app'
   },
   {
-    path:'/app/:id',
-    // path: '/app',
+    // path:'/app/:id',
+    path: '/app',
     name: 'app',
     props:true,
     // props:{

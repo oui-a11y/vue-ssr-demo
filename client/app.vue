@@ -2,7 +2,7 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    {{fullName}}分隔这里{{counter}}分隔{{text}}分隔{{textPlus}}分隔{{c}}
+    <!--{{fullName}}分隔这里{{counter}}分隔{{text}}分隔{{textPlus}}分隔{{c}}-->
     <router-link to="/app/123">app</router-link>
     <router-link to="/login">login</router-link>
     <transition name="fade">
@@ -20,8 +20,11 @@
   // import Todo from './views/todo/todo.vue'
 
   export default {
+    metaInfo:{
+      title:'xin doc'
+    },
     mounted() {
-      console.log(this.$store)
+      // console.log(this.$store)
       // this.$store.commit('updateCount',{
       //   num:5
       // })
@@ -30,8 +33,8 @@
       //   this.updateCount({num:i++})
       // }, 1000)
 
-      this['a/updataText'](1231232321)
-      this['b/testAction']()
+      // this['a/updataText'](1231232321)
+      // this['b/testAction']()
     },
     components: {
       Header,
@@ -43,22 +46,22 @@
       // ...mapState({
       //   counter:'count'
       // }),
-      ...mapState({
-        counter: (state) => state.count,
-        text: (state) => state.a.text,
-        c: (state) => state.c.text
-      }),
-      ...mapGetters({
-        fullName: 'fullName',
-        textPlus: 'a/textPlus'
-      })
+      // ...mapState({
+      //   counter: (state) => state.count,
+      //   text: (state) => state.a.text,
+      //   c: (state) => state.c.text
+      // }),
+      // ...mapGetters({
+      //   fullName: 'fullName',
+      //   textPlus: 'a/textPlus'
+      // })
       // fullName(){
       //   return this.$store.getters.fullName
       // }
     },
     methods: {
-      ...mapMutations(['updateCount', 'a/updataText']),
-      ...mapActions(['updateCountAsync', 'a/add', 'b/testAction'])
+      // ...mapMutations(['updateCount', 'a/updataText']),
+      // ...mapActions(['updateCountAsync', 'a/add', 'b/testAction'])
     }
   }
 </script>
