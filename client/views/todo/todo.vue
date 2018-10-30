@@ -1,6 +1,9 @@
 <template>
   <div>
     <section class="real-app">
+      <tabs :value="filter" @change="handleChangeTab">
+        <tab :label="tab" :index="tab" v-for="tab in stats"></tab>
+      </tabs>
       <input
         type="text"
         class="add-input"
@@ -14,7 +17,7 @@
         :key="todo.id"
         @del="deleteTodo"
       />
-      <tabs
+      <helper
         :filter="filter"
         :todos="todos"
         @toggle="toggleFilter"
@@ -28,7 +31,7 @@
 
 <script>
   import Item from './item.vue'
-  import Tabs from './tabs.vue'
+  import Helper from './helper.vue'
 
   let id = 0
   export default {
@@ -58,6 +61,7 @@
     },
     data() {
       return {
+        stats: ['all', 'active', 'completed'],
         todos: [],
         filter: 'all',
         proId: ''
@@ -65,7 +69,7 @@
     },
     components: {
       Item,
-      Tabs
+      Helper
     },
     computed: {
       filteredTodos() {
@@ -77,6 +81,9 @@
       }
     },
     methods: {
+      handleChangeTab(index){
+        this.filter = index
+      },
       proIdFn() {
         const that = this;
         console.log(that.proId)

@@ -14,6 +14,7 @@ const devServer = {
   overlay: {
     errors: true,
   },
+  headers: { 'Access-Control-Allow-Origin': '*' },
   //映射路由，防止刷新后找不到对应映射文件
   historyApiFallback: {
     index: '/public/index.html'

@@ -8,11 +8,14 @@ import './assets/styles/global.styl'
 
 import creatRouter from './router/index'
 import creatStore from './store/index'
-
+import Notification from './components/notification'
+import Tabs from './components/tabs'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Meta)
+Vue.use(Notification)
+Vue.use(Tabs)
 
 
 export default () => {

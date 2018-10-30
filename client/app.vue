@@ -9,6 +9,8 @@
       <router-view/>
     </transition>
     <!--<router-view name="a"/>-->
+    <!--<notification content="test notify"></notification>-->
+    <button @click="handleNotify">handleNotify</button>
     <Footer></Footer>
   </div>
 </template>
@@ -60,6 +62,12 @@
       // }
     },
     methods: {
+      handleNotify(){
+        this.$notify({
+          content: 'test $notify',
+          btn: 'close'
+        })
+      }
       // ...mapMutations(['updateCount', 'a/updataText']),
       // ...mapActions(['updateCountAsync', 'a/add', 'b/testAction'])
     }
