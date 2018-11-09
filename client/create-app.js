@@ -10,12 +10,14 @@ import creatRouter from './router/index'
 import creatStore from './store/index'
 import Notification from './components/notification'
 import Tabs from './components/tabs'
+import Directive from './directive/longpress'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Meta)
 Vue.use(Notification)
 Vue.use(Tabs)
+Vue.use(Directive)
 
 
 export default () => {
