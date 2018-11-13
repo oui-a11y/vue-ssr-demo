@@ -11,6 +11,7 @@ import creatStore from './store/index'
 import Notification from './components/notification'
 import Tabs from './components/tabs'
 import Directive from './directive/longpress'
+// import 'components/global.js'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
